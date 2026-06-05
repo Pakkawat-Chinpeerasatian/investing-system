@@ -64,22 +64,22 @@ ON DEMAND
 
 ## Automation Architecture
 
-All scheduled runs use **Anthropic Routines** (cloud-hosted agents) rather than local cron jobs:
+All scheduled runs use **Anthropic Routines** (cloud-hosted agents) rather than local cron jobs. The routines are live and running.
 
 | Routine | Schedule | Model |
 |---------|----------|-------|
-| Investing-Daily | 10:45 UTC daily | claude-sonnet-4-6 |
-| Investing-Weekly | 11:00 UTC Sunday | claude-sonnet-4-6 |
-| Investing-Monthly | 01:00 UTC 1st of month | claude-sonnet-4-6 |
+| Investing-Daily | 10:45 UTC daily (17:45 Bangkok) | claude-sonnet-4-6 |
+| Investing-Weekly | 11:00 UTC Sunday (18:00 Bangkok) | claude-sonnet-4-6 |
+| Investing-Monthly | 01:00 UTC 1st of month (08:00 Bangkok) | claude-sonnet-4-6 |
 
-Each routine clones this repo, runs the relevant skill, and writes outputs to `vault/`. A background `git pull` in the local dashboard syncs outputs hourly.
+Each routine runs in Anthropic's cloud, clones the private workspace repo, executes the relevant skill, and commits outputs back. A background hourly `git pull` in the local dashboard syncs the results down.
 
 ---
 
 ## Repository Structure
 
 ```
-investing-portfolio/
+investing-system/
   README.md             ← this file
   pipeline-design.md    ← full pipeline architecture document
   skills/
