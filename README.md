@@ -58,7 +58,7 @@ ON DEMAND
 
 **Adversarial Gate** — Every thesis must pass `/critics` before being saved. The critics agent attacks on 7 vectors: valuation, growth slowdown, competition, customer concentration, regulation, hype, and "why not just buy an index fund?"
 
-**Different Model = Different Biases** — `/critics` uses a different model family (Gemini or GPT-4o) by design. Same-model critique produces same-model blind spots.
+**Different Model = Different Biases** — Claude runs everything (pipeline, news filtering, research, analysis). `/critics` uses GPT-4o as primary and Gemini 2.5 Pro as fallback — never Claude. Same-model critique produces same-model blind spots.
 
 ---
 
