@@ -53,7 +53,7 @@ curl -s -X POST "https://api.openai.com/v1/chat/completions" \
 ```
 
 **Fallback: Gemini 2.5 Pro** (if no OpenAI key)
-**Last resort: Adversarial Claude** — warn "⚠️ Same model as researcher — set OPENAI_API_KEY for a real independent second opinion"
+**If both fail: abort** — do NOT fall back to Claude (same model as the researcher = same blind spots)
 
 Record which model was used in the saved output.
 

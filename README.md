@@ -132,5 +132,5 @@ Python utilities called by skills during automated runs:
 | Knowledge storage | Obsidian-format `.md` vault |
 | Long-form article storage | Google NotebookLM |
 | Price data | Yahoo Finance (yfinance) |
-| Adversarial model | GPT-4o → Gemini 2.5 Pro → Claude fallback |
+| Adversarial model | GPT-4o → Gemini 2.5 Pro (Claude excluded — same-model bias) |
 | Dashboard | FastAPI + local server |
